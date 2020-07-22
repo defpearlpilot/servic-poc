@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package dots;
+
+message DotCreateRequest {
+  int32 worker = 1;
+  string author = 2;
+  string subject = 3;
+  int32 rating = 4;
+  int32 importance = 5;
+  string attribute = 6;
+  string comment = 7;
+}
+
+message DotCreateResponse {
+  string dotId = 1;
+  string author = 2;
+  string subject = 3;
+  int32 rating = 4;
+  int32 importance = 5;
+  string attribute = 6;
+  string comment = 7;
+}
+
+service Dots {
+  // function which can be called
+  rpc CreateDot (DotCreateRequest) returns (DotCreateResponse);
+}
